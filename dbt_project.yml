@@ -36,3 +36,9 @@ models:
     # Applies to all files under models/example/
     example:
       materialized: view
+    marts:
+      materialized: table
+      ##Custom Schema Example --> refer to generate_schema_name macro in macros folder.
+      ##+schema: sales
+    staging:
+      materialized: view
