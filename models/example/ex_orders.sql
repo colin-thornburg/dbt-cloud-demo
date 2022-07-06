@@ -1,0 +1,1 @@
+Select * from {{ ref('ex_stg_orders') }}
