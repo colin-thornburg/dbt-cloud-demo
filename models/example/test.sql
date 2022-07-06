@@ -1,1 +1,1 @@
-Select current_timestamp as current_Time_Right_Now
+Select current_timestamp as current_Time
