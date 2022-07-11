@@ -37,7 +37,7 @@ models:
     example:
       materialized: view
     marts:
-      materialized: table
+      materialized: view
       ##Custom Schema Example --> refer to generate_schema_name macro in macros folder.
       ##+schema: sales
     staging:
