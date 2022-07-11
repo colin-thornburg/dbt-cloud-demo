@@ -1,1 +1,0 @@
-Select current_timestamp as current_Time
