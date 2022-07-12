@@ -1,7 +1,3 @@
---Example using custom schemas
---{{ config(schema='sales') }}
-
-
 with orders as  (
     select * from {{ ref('stg_orders' )}}
 ),
