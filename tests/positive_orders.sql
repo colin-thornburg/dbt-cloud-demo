@@ -4,6 +4,6 @@
 select
   customer_id,
 	sum(number_of_orders) as orders
-from {{ ref('demo_example') }}
+from {{ ref('dim_customers') }}
 group by customer_id
 having orders < 0
