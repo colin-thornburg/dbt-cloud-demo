@@ -2,18 +2,40 @@
 version: 2
 
 models:
-    - name: demo_example
-      description: "demo model"
-      columns:
-          - name: customer_id
+  - name: obt_order_analytics
+    description: "Denormalized table for BI tool for consumption.  Shows all orders and customer info"
+    columns:
+          - name: order_id
             description: "The primary key for this table"
             tests:
                 - unique
+          - name: customer_id
+            description: "Unique customer identifier"
+            tests:
                 - not_null
           - name: first_name
             description: "The first name of the customer"
           - name: last_name
-            description: "The last name of the customer" 
+            description: "The first initial of the customer to hide potential downstream PII issue" 
           - name: number_of_orders
             description: "The number of orders the customer has placed at Jaffle Shop" 
+          - name: order_date
+            description: "The date the order was placed"
+
+exposures:
+  
+  - name: order_metrics
+    type: dashboard
+    maturity: high
+    url: https://mode/dashboards/1
+    description: >
+      Did someone say "exponential growth"?
+    
+    depends_on:
+      - ref('obt_order_analytics')
+      - source('jaffle_shop', 'orders')
+      
+    owner:
+      name: Colin
+      email: colin.thornburg@dbtlabs.com
 
