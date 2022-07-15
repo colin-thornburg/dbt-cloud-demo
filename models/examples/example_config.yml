@@ -22,3 +22,20 @@ models:
           - name: order_date
             description: "The date the order was placed"
 
+exposures:
+  
+  - name: order_metrics
+    type: dashboard
+    maturity: high
+    url: https://mode/dashboards/1
+    description: >
+      Did someone say "exponential growth"?
+    
+    depends_on:
+      - ref('obt_order_analytics')
+      - source('jaffle_shop', 'orders')
+      
+    owner:
+      name: Colin
+      email: colin.thornburg@dbtlabs.com
+
