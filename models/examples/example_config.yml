@@ -33,7 +33,6 @@ exposures:
     
     depends_on:
       - ref('obt_order_analytics')
-      - source('jaffle_shop', 'orders')
       
     owner:
       name: Colin
