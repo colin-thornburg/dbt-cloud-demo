@@ -1,8 +1,8 @@
 name: Dependent Jobs
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: "* * 0 0 0"
+   schedule:
+     - cron: "0 4 * * *"
 
 jobs:
   dependent_jobs:
