@@ -15,6 +15,5 @@ Select * from {{ ref('incremental_source_table') }}
 
     -- these filters will only be applied on an incremental run --> ignored on Full refresh
     where Loaded_At > (select max(Loaded_At) from {{ this }} ) 
-    or id not in (Select id from {{ this }} )
 
 {% endif %}
