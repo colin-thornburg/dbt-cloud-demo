@@ -16,7 +16,8 @@ final as (
         customers.first_name,
         customers.last_name,
         customers.number_of_orders,
-        orders.order_date
+        orders.order_date,
+        orders.amount
 
     from orders
     left join customers using (customer_id)
