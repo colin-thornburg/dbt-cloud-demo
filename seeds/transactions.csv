@@ -1,0 +1,9 @@
+Date, Customer_Id, Channel, Restaurant, Revenue
+2022-01-01, 1, Drive-thru, Pizza Hut, 8.50
+2022-01-02, 2, Dine-In, KFC, 12.50
+2022-01-03, 3, Mobile, Taco Bell, 13.45
+2022-01-04, 4, Dine-In, Pizza Hut, 26.55
+2022-01-05, 5, Drive-thru, Pizza Hut, 6.50
+2022-01-06, 6, Drive-Thru, KFC, 11.50
+2022-01-07, 7, Mobile, Taco Bell, 10.65
+2022-01-08, 8, Dine-In, Pizza Hut, 36.25

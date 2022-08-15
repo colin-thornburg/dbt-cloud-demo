@@ -11,3 +11,9 @@ One of the following values:
 | returned       | Item has been returned                           |
 
 {% enddocs %}
+
+{% docs jaffle_shop_source %}
+
+Source data coming from our homegrown jaffleshop ERP System loaded from our favorite EL Loader, Fivetran!
+
+{% enddocs %}
