@@ -6,9 +6,9 @@
 
 with trx as (
     Select *
-    from {{ source('transactions', 'transactions') }}
+    from {{ source('transaction_seed', 'transactions') }}
 )
 
-Select Date, sum(Revenue) as Daily Revenue
+Select Date, sum(Revenue) as Daily_Revenue
 from trx
 group by 1
