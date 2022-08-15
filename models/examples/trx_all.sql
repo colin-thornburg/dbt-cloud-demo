@@ -5,4 +5,4 @@
     )
 }}
 
-Select * from {{ source('transactions', 'transactions') }}
+Select * from {{ source('transaction_seed', 'transactions') }}
