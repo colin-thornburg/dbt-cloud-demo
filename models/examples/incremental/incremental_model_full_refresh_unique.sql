@@ -3,13 +3,28 @@
 {{
     config(
         materialized='incremental',
-        unique_key=['id', 'order_date'],
+        unique_key='id',
         on_schema_change='append_new_columns', 
         incremental_strategy='delete+insert'
     )
 }}
 
-Select * from {{ ref('incremental_source_table') }}
+with a as (
+
+    Select id, max(Loaded_At) as Max_Load_Date 
+    from {{ ref('incremental_source_table') }} 
+    group by id
+), b as (
+
+    Select * 
+    from {{ ref('incremental_source_table') }} 
+        )
+
+Select b.id, b.product, b.order_date, b.ship_status, b.Loaded_At from b
+    inner join a 
+    on a.id = b.id and a.Max_Load_Date = b.Loaded_At
+    order by 1
+
 
 {% if is_incremental() %}
 

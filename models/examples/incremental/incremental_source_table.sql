@@ -32,7 +32,7 @@ Select
         'In-Transit' as Ship_Status,
         current_timestamp()::date as Loaded_At
 
-/*
+
 union all
 
 Select 
@@ -50,4 +50,3 @@ Select
         current_timestamp()::date - 1 as Order_Date,
         'Completed' as Ship_Status,
         current_timestamp()::date + 1 as Loaded_At
-*/
