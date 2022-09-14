@@ -2,18 +2,29 @@ version: 2
 
 sources:
   - name: jaffle_shop
+    description: '{{ doc("jaffle_shop_source") }}'
     database: raw_demo
     schema: jaffle_shop
+    loader: fivetran
+    meta: 
+      owner: "@Bob the data loader"
+      pii: False
+    tags: 
+      - "weekly"
+    quoting:  ###These are set to false by Default
+      database: False
+      schema: False
+      identifier: False
     tables:
       - name: customers
+        description: Source table for all customer information
       - name: orders
+        description: '{{ doc("order_status") }}'
         loaded_at_field: _etl_loaded_at
         freshness:
           warn_after: {count: 12, period: hour}
-          error_after: {count: 30, period: day}
+          #error_after: {count: 30, period: day}
 
-                      
-            ### dbt source freshness --select source:jaffle_shop
-            ### Select max(_etl_loaded_at) from {{ source('jaffle_shop', 'orders') }} ###
+
 
 

@@ -1,7 +1,3 @@
---Example using custom schemas
---{{ config(schema='sales') }}
-
-
 with orders as  (
     select * from {{ ref('stg_orders' )}}
 ),
@@ -13,7 +9,7 @@ payments as (
 order_payments as (
     select
         order_id,
-        sum(case when status = 'success' then amount end) as amount
+        sum(case when status = 'success' then amount end) as amount --THIS IS WHERE THE ERROR IS!!!
 
     from payments
     group by 1

@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: transaction_seed
+    database: colint_demo
+    schema: dbt_cthornburg
+    tables:
+      - name: transactions

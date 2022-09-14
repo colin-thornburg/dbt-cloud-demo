@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: "Data on all orders with dollar amounts"
+    columns:
+      - name: order_id
+        description: "unique identifier of the order"
+
+      - name: customer_id
+        description: "unique identifier for the customer"
+
+      - name: order_date
+        description: "Date the order was placed by the customer"
+
+      - name: amount
+        description: "Amount in USD"
+
+  - name: dim_customers
+    description: "data on all customers at jaffle shop"
+    columns:
+      - name: customer_id
+        description: "unique customer id number"
+        tests:
+          - unique:
+              config:
+                severity: error
+          - not_null
+
+      - name: first_name
+        description: "First Name of the customer"
+
+      - name: last_name
+        description: "Last Name of the customer"
+
+      - name: first_order_date
+        description: "First date an order was placed in UTC"
+
+      - name: most_recent_order_date
+        description: "Most recent order date in UTC"
+
+      - name: number_of_orders
+        description: "Total number of orders placed"

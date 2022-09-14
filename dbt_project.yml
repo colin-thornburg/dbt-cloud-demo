@@ -34,11 +34,15 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   demo_project:
     # Applies to all files under models/example/
-    example:
+    examples:
       materialized: view
     marts:
-      materialized: table
+      materialized: view
       ##Custom Schema Example --> refer to generate_schema_name macro in macros folder.
       ##+schema: sales
     staging:
       materialized: view
+
+## Variables --> Example Usage in a model: select * from events where date > '{{ var("start_date") }}'
+vars:
+  start_date: '2016_06_01'
