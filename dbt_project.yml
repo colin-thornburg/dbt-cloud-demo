@@ -46,3 +46,6 @@ models:
 ## Variables --> Example Usage in a model: select * from events where date > '{{ var("start_date") }}'
 vars:
   start_date: '2016_06_01'
+
+on-run-end:
+  "{{ dbt_artifacts.upload_results(results) }}"
