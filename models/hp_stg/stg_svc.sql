@@ -1,0 +1,8 @@
+Select 
+    loan_number as Svc_Loan_Number,
+    Ops_Loan_Number,
+    to_timestamp(First_Observed_Time) as First_Observed_Time,
+    to_timestamp(Data_Warehouse_Load_Date) as Data_Warehouse_Load_Date 
+
+
+from {{ source('hp', 'hp_svc') }}
