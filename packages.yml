@@ -1,7 +1,7 @@
-### When a new package is added, run command: dbt deps ###
-
 packages:
+  - package: dbt-labs/metrics
+    version: [">=0.3.0", "<0.4.0"]
   - package: dbt-labs/dbt_utils
-    version: 0.8.6
+    version: [">=0.8.1", "<0.9.0"]
   - package: dbt-labs/codegen
     version: 0.7.0

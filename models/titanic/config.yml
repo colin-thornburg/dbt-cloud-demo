@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: my_python_model
+    config:
+      packages:
+        - "numpy==1.23.1"
+        - scikit-learn
+        - pandas

@@ -11,3 +11,8 @@ sources:
     schema: dbt_cthornburg
     tables:
       - name: words
+  - name: titanic_seed
+    database: colint_demo
+    schema: dbt_cthornburg
+    tables:
+      - name: titanic
