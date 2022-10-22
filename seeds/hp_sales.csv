@@ -1,0 +1,3 @@
+loan_number, first_observed_time, data_warehouse_load_date
+123, 2022-01-01 03:00:00, 2022-01-01 03:20:00
+234, 2022-01-02 05:00:00, 2022-01-02 05:10:00

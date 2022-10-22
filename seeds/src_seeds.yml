@@ -6,3 +6,13 @@ sources:
     schema: dbt_cthornburg
     tables:
       - name: transactions
+  - name: words_seed
+    database: colint_demo
+    schema: dbt_cthornburg
+    tables:
+      - name: words
+  - name: titanic_seed
+    database: colint_demo
+    schema: dbt_cthornburg
+    tables:
+      - name: titanic

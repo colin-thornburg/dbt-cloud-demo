@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: hp
+    database: colint_demo
+    schema: dbt_cthornburg
+    tables:
+      - name: hp_sales
+        loaded_at_field: DATA_WAREHOUSE_LOAD_DATE
+      - name: hp_ops
+        loaded_at_field: DATA_WAREHOUSE_LOAD_DATE
+      - name: hp_svc
+        loaded_at_field: DATA_WAREHOUSE_LOAD_DATE
