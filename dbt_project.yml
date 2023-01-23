@@ -42,6 +42,8 @@ models:
       ##+schema: sales
     staging:
       materialized: view
+    titanic:
+      schema: titanic
 
 ## Variables --> Example Usage in a model: select * from events where date > '{{ var("start_date") }}'
 vars:

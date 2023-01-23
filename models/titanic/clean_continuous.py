@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 
 def model(dbt, session):
     dbt.config(
-        packages = ["scikit-learn"],
+        packages = ["scikit-learn", "pandas"],
         materialized="table")
     titanic = dbt.source("titanic_seed", "titanic").to_pandas()
 
